@@ -1,0 +1,7 @@
+<h1>Headlines</h1>
+
+<div *ngIf="news$ | async as news">
+  <p *ngFor="let article of news.articles; index as i">
+    {{ article.title }}
+  </p>
+</div>
