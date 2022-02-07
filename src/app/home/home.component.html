@@ -1,4 +1,7 @@
 <mat-tab-group>
+  <mat-tab label="Top US Headlines">
+    <app-news [news$]="topUSHeadlines$"></app-news>
+  </mat-tab>
   <mat-tab label="Business">
     <app-news [news$]="businessNews$"></app-news>
   </mat-tab>

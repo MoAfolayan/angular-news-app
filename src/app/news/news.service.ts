@@ -8,9 +8,10 @@ import { INews } from './news';
 })
 export class NewsService {
 
-  private businessNewsUrl: string = 'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=047211f713cf4eb09e845c9739c86aa9';
-  private wallStreetJournalNewsUrl: string = 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=047211f713cf4eb09e845c9739c86aa9';
-  private techNewsUrl: string = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=047211f713cf4eb09e845c9739c86aa9';
+  private topUSHeadlinesUrl: string = 'https://newsapi.org/v2/top-headlines?country=us&from=2022-02-07&sortBy=popularity&apiKey=047211f713cf4eb09e845c9739c86aa9';
+  private businessNewsUrl: string = 'https://newsapi.org/v2/top-headlines?country=us&category=business&from=2022-02-07&sortBy=popularity&apiKey=047211f713cf4eb09e845c9739c86aa9';
+  private wallStreetJournalNewsUrl: string = 'https://newsapi.org/v2/everything?domains=wsj.com&from=2022-02-07&sortBy=popularity&apiKey=047211f713cf4eb09e845c9739c86aa9';
+  private techNewsUrl: string = 'https://newsapi.org/v2/top-headlines?sources=techcrunch&from=2022-02-07&sortBy=popularity&apiKey=047211f713cf4eb09e845c9739c86aa9';
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +19,9 @@ export class NewsService {
     let url: string;
 
     switch (newsSector.toLowerCase()) {
+      case 'topusheadlines':
+        url = this.topUSHeadlinesUrl;
+        break;
       case 'business':
         url = this.businessNewsUrl;
         break;
@@ -28,7 +32,7 @@ export class NewsService {
         url = this.techNewsUrl;
         break;
       default:
-        url = this.businessNewsUrl;
+        url = this.topUSHeadlinesUrl;
         break;
     }
     return this.http.get<INews>(`${url}`);

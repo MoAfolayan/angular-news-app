@@ -11,6 +11,7 @@ import { tap } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
+  topUSHeadlines$: Observable<INews> | undefined;
   businessNews$: Observable<INews> | undefined;
   wallStreetJournalNews$: Observable<INews> | undefined;
   techNews$: Observable<INews> | undefined;
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
+    this.topUSHeadlines$ = this.getNews('topusheadlines');
     this.businessNews$ = this.getNews('business');
     this.wallStreetJournalNews$ = this.getNews('wallStreetJournal');
     this.techNews$ = this.getNews('tech');
