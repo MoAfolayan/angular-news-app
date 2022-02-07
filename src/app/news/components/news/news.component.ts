@@ -17,4 +17,8 @@ export class NewsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  openNewsLink(url: string) {
+    window.open(url);
+  }
 }

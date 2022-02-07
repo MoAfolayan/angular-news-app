@@ -1,11 +1,21 @@
-<h1>Headlines</h1>
-
 <div *ngIf="news$ | async as news">
-  <ul>
-    <li *ngFor="let article of news.articles; index as i">
-      <p>
-        {{ article.title }}
-      </p>
-    </li>
-  </ul>
+  <mat-card class="card" *ngFor="let article of news.articles; index as i">
+    <mat-card-title>
+      {{ article.title }}
+    </mat-card-title>
+    <mat-card-subtitle>
+      {{ article.description }}
+    </mat-card-subtitle>
+    <mat-card-content>
+      {{ article.content }}
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-stroked-button color="accent" (click)="openNewsLink(article.url);">
+        <mat-icon>
+          flight_land
+        </mat-icon>
+        Read more
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </div>
