@@ -1,7 +1,11 @@
-<h1>Headlines</h1>
-
-<div *ngIf="news$ | async as news">
-  <p *ngFor="let article of news.articles; index as i">
-    {{ article.title }}
-  </p>
-</div>
+<mat-tab-group>
+  <mat-tab label="Business">
+    <app-news [news$]="businessNews$"></app-news>
+  </mat-tab>
+  <mat-tab label="Wall Street Journal">
+    <app-news [news$]="wallStreetJournalNews$"></app-news>
+  </mat-tab>
+  <mat-tab label="Tech">
+    <app-news [news$]="techNews$"></app-news>
+  </mat-tab>
+</mat-tab-group>

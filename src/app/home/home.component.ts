@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { INews } from './news/news';
-import { NewsService } from './news/news.service';
+import { INews } from '../news/news';
+import { NewsService } from '../news/news.service';
 import { tap } from 'rxjs/operators';
 
 @Component({
@@ -11,16 +11,20 @@ import { tap } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
-  news$: Observable<INews> | undefined;
+  businessNews$: Observable<INews> | undefined;
+  wallStreetJournalNews$: Observable<INews> | undefined;
+  techNews$: Observable<INews> | undefined;
 
-  constructor(private newsService: NewsService,) { }
+  constructor(private newsService: NewsService) { }
 
   ngOnInit(): void {
-    this.getNews();
+    this.businessNews$ = this.getNews('business');
+    this.wallStreetJournalNews$ = this.getNews('wallStreetJournal');
+    this.techNews$ = this.getNews('tech');
   }
 
-  getNews() {
-    this.news$ = this.newsService.getNews()
+  getNews(newsSector: string) {
+    return this.newsService.getNews(newsSector)
       .pipe(
         tap(console.log)
       );
