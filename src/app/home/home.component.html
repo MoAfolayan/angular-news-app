@@ -1,14 +1,5 @@
 <mat-tab-group>
-    <mat-tab label="{{config.topUSHeadlines.displayName}}">
-        <app-news [news$]="topUSHeadlines$"></app-news>
-    </mat-tab>
-    <mat-tab label="{{config.businessNews.displayName}}">
-        <app-news [news$]="businessNews$"></app-news>
-    </mat-tab>
-    <mat-tab label="{{config.wallStreetJournalNews.displayName}}">
-        <app-news [news$]="wallStreetJournalNews$"></app-news>
-    </mat-tab>
-    <mat-tab label="{{config.techNews.displayName}}">
-        <app-news [news$]="techNews$"></app-news>
+    <mat-tab *ngFor="let item of keys; index as i" label="{{config[item].displayName}}">
+        <app-news [news$]="config[item].observable"></app-news>
     </mat-tab>
 </mat-tab-group>
