@@ -19,44 +19,44 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: '**',
-    pathMatch: 'full',
-    redirectTo: 'home'
-  }
+    {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    },
+    {
+        path: 'home',
+        component: HomeComponent
+    },
+    {
+        path: '**',
+        pathMatch: 'full',
+        redirectTo: 'home'
+    }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    NewsComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    RouterModule.forRoot(routes),
-    BrowserAnimationsModule,
-    MatTabsModule,
-    MatCardModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatListModule,
-    MatCheckboxModule,
-    MatButtonModule
-  ],
-  exports: [RouterModule],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        NewsComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        RouterModule.forRoot(routes),
+        BrowserAnimationsModule,
+        MatTabsModule,
+        MatCardModule,
+        MatIconModule,
+        MatToolbarModule,
+        MatListModule,
+        MatCheckboxModule,
+        MatButtonModule
+    ],
+    exports: [RouterModule],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
