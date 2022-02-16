@@ -13,3 +13,8 @@ body {
 .card {
     margin: 25px;
 }
+
+.card-image {
+    margin-right: 25px;
+    margin-bottom: 25px;
+}

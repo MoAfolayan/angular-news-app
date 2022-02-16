@@ -1,13 +1,17 @@
 <div *ngIf="news$ | async as news">
     <mat-card class="card" *ngFor="let article of news.articles; index as i">
         <mat-card-header>
-            <img mat-card-sm-image src="{{article.urlToImage}}" alt="Photo of news article">
-            <mat-card-title>
-                {{ article.title }}
-            </mat-card-title>
-            <mat-card-subtitle>
-                {{ article.description }}
-            </mat-card-subtitle>
+            <div class="card-image">
+                <img mat-card-lg-image src="{{article.urlToImage}}" alt="Photo of news article">
+            </div>
+            <div>
+                <mat-card-title>
+                    {{ article.title }}
+                </mat-card-title>
+                <mat-card-subtitle>
+                    {{ article.description }}
+                </mat-card-subtitle>
+            </div>
         </mat-card-header>
         <mat-card-content>
             <ul>
