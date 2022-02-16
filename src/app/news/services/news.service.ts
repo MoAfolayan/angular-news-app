@@ -16,7 +16,7 @@ export class NewsService {
 
         switch (newsSector.toLowerCase()) {
             case 'topusheadlines':
-                url = newsConfig.topUSHeadlines.url
+                url = newsConfig.topUSHeadlines.url;
                 break;
             case 'business':
                 url = newsConfig.businessNews.url;

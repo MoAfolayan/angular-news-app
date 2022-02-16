@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { INews } from '../news/models/news';
 import { NewsService } from '../news/services/news.service';
 import { tap } from 'rxjs/operators';
+import { newsConfig } from '../news/news-config';
 
 @Component({
     selector: 'app-home',
@@ -10,6 +11,8 @@ import { tap } from 'rxjs/operators';
     styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+    config: any = newsConfig;
 
     topUSHeadlines$: Observable<INews> | undefined;
     businessNews$: Observable<INews> | undefined;
