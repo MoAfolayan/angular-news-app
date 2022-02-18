@@ -1,5 +1,5 @@
 <mat-tab-group>
-    <mat-tab *ngFor="let item of keys; index as i" [label]="config[item].displayName">
-        <app-news [news$]="config[item].observable"></app-news>
+    <mat-tab *ngFor="let newsCategory of newsCategories; index as i" [label]="newsConfig[newsCategory].displayName">
+        <app-news [news$]="newsConfig[newsCategory].observable"></app-news>
     </mat-tab>
 </mat-tab-group>

@@ -9,17 +9,17 @@ import { newsConfig } from '../news/news-config';
 })
 export class HomeComponent implements OnInit {
 
-    config: any = newsConfig;
-    keys: any;
+    newsConfig: any = newsConfig;
+    newsCategories: any;
 
     constructor(private newsService: NewsService) { }
 
     ngOnInit(): void {
-        this.keys = Object.keys(this.config);
+        this.newsCategories = Object.keys(this.newsConfig);
         this.getAllNews();
     }
 
     getAllNews() {
-        this.newsService.getAllNews(this.config);
+        this.newsService.getAllNews(this.newsConfig);
     }
 }
