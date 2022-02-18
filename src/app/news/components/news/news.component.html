@@ -9,7 +9,7 @@
                     {{ article.title }}
                 </mat-card-title>
                 <mat-card-subtitle>
-                    {{ article.description }}
+                    {{ article.description | removeHtmlTags }}
                 </mat-card-subtitle>
             </div>
         </mat-card-header>
@@ -26,7 +26,7 @@
                 </li>
             </ul>
             <p>
-                {{ article.content }}
+                {{ article.content | removeHtmlTags }}
             </p>
         </mat-card-content>
         <mat-card-actions>

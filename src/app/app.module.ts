@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { RemoveHtmlTagsPipe } from './news/pipes/remove-html-tags.pipe';
 
 
 const routes: Routes = [
@@ -39,7 +40,8 @@ const routes: Routes = [
     declarations: [
         AppComponent,
         HomeComponent,
-        NewsComponent
+        NewsComponent,
+        RemoveHtmlTagsPipe
     ],
     imports: [
         BrowserModule,
