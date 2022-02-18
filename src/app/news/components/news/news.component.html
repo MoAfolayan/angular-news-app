@@ -2,7 +2,7 @@
     <mat-card class="card" *ngFor="let article of news.articles; index as i">
         <mat-card-header>
             <div class="card-image">
-                <img mat-card-image src="{{article.urlToImage}}" alt="Photo of news article">
+                <img mat-card-image [src]="article.urlToImage" alt="Photo of news article">
             </div>
             <div>
                 <mat-card-title>
