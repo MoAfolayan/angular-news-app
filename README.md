@@ -6,6 +6,9 @@ I created an app to display for me the news headlines so I don't have to search 
   - https://newsapi.org/ API calls
   - no back-end
   - no database
+  
+  
+# Angular CLI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.15.
 
