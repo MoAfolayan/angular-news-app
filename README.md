@@ -1,5 +1,12 @@
 # NewsAppFrontend
 
+I created an app to display for me the news headlines so I don't have to search multiple sources across the internet for news
+- Design
+  - Angular front-end
+  - https://newsapi.org/ API calls
+  - no back-end
+  - no database
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.15.
 
 ## Development server
