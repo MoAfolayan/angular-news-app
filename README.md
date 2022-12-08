@@ -1,4 +1,4 @@
-# NewsAppFrontend
+# News App
 
 I created an app to display for me the news headlines so I don't have to search multiple sources across the internet for news
 - Design
