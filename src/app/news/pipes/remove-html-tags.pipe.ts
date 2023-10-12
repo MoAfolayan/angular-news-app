@@ -8,4 +8,5 @@ export class RemoveHtmlTagsPipe implements PipeTransform {
     transform(value: string): string {
         return value.replace(/<[a-z][\s\S]*>/i, '');
     }
+
 }
